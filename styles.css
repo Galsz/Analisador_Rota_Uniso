@@ -1,0 +1,14 @@
+.mapContainer {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    width: 100%;
+    height: auto; /* Você pode ajustar isso conforme necessário */
+    overflow: hidden; /* Oculta qualquer conteúdo que exceda o contêiner */
+}
+
+#universityMap, #routeCanvas {
+    max-width: 100%; 
+    height: auto; 
+}
