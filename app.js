@@ -20,9 +20,9 @@ document.getElementById('universityMap').addEventListener('click', function(even
         sourceNode = clickedNodeId;
     } else if (clickCount === 2) {
         targetNode = clickedNodeId;
-        // Agora, temos os dois nós. Podemos encontrar o caminho mais curto entre eles.
+        
         findShortestPath(sourceNode, targetNode);
-        clickCount = 0; // Reset the click count
+        clickCount = 0; 
     }
 });
 
