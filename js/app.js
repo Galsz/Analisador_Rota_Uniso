@@ -1,6 +1,18 @@
 let clickCount = 0;
 let sourceNode, targetNode;
 
+$('.circle').each(function () {
+
+    $(this).on('click', function () { 
+
+        var vert = $(this).text();
+    
+        console.log("O vértice " + vert + " foi clicado");
+    });
+
+});
+
+
 document.getElementById('universityMap').addEventListener('click', function(event) {
     
     clickCount++;
