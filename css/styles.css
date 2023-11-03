@@ -6,12 +6,21 @@
 	height: 100%;
 }
 
+/* MAPA */
+
+#div-mapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
 /* VÉRTICES */
 
 .circle {
 	position: absolute;
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
     display: grid;
@@ -19,7 +28,7 @@
     text-align: center;
     border: 1px solid black;
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -142,4 +151,96 @@
     top: 440px;
     left: 591px;
 	background-color:rgb(255, 0, 0);
+}
+
+
+/* ARESTAS */
+
+.edges svg {
+    position: absolute;
+}
+
+#e-1-2{
+    top: 75px; 
+    left: 207px; 
+}
+
+#e-2-22{
+    top: 195px; 
+    left: 275px; 
+}
+
+#e-2-3{
+    top: 198px;
+    left: 380px; 
+}
+
+#e-3-4{
+    top: 170px;
+    left: 455px; 
+}
+
+#e-3-5{
+    top: 287px;
+    left: 455px; 
+}
+
+#e-3-21{
+    top: 290px;
+    left: 394px; 
+}
+
+#e-3-23{
+    top: 293px;
+    left: 448px; 
+}
+
+#e-21-23{
+    top: 343px;
+    left: 400px; 
+}
+
+#e-23-24{
+    top: 377px;
+    left: 508px; 
+}
+
+#e-5-24{
+    top: 423px;
+    left: 600px; 
+}
+
+#e-5-6{
+    top: 430px;
+    left: 612px; 
+}
+
+#e-6-7{
+    top: 490px;
+    left: 573px; 
+}
+
+#e-7-8{
+    top: 452px;
+    left: 545px; 
+}
+
+#e-8-9{
+    top: 420px;
+    left: 512px; 
+}
+
+#e-9-10{
+    top: 401px;
+    left: 465px; 
+}
+
+#e-10-11{
+    top: 396px;
+    left: 418px; 
+}
+
+#e-11-12{
+    top: 394px;
+    left: 365px; 
 }
