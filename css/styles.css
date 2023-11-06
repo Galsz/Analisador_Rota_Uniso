@@ -1,9 +1,9 @@
 /* GRAFO */
 
 #grafo {
-	position: relative;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* MAPA */
@@ -18,11 +18,11 @@
 /* VÉRTICES */
 
 .circle {
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	transform: translate(-50%, -50%);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
     display: grid;
     place-items: center;
     text-align: center;
@@ -30,127 +30,164 @@
     color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
 }
 
+.circle:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    z-index: 10;
+    cursor: pointer;
+}
+
+.circle:active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
 #v-1 {
-	top: 70px;
+    top: 70px;
     left: 197px;
-	background-color: rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-2 {
-	top: 189px;
+    top: 189px;
     left: 373px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-3 {
-	top: 283px;
+    top: 283px;
     left: 447px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-4 {
-	top: 165px;
+    top: 165px;
     left: 692px;
-	background-color:rgb(5 213 188);
+    background-color: rgb(5 213 188);
 }
+
 #v-5 {
-	top: 422px;
+    top: 422px;
     left: 698px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-6 {
     top: 563px;
     left: 606px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-7 {
     top: 482px;
     left: 570px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-8 {
     top: 445px;
     left: 540px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-9 {
     top: 415px;
     left: 503px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-10 {
     top: 402px;
     left: 455px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-11 {
     top: 397px;
     left: 407px;
-	background-color:rgb(139 4 255);
+    background-color: rgb(139 4 255);
 }
+
 #v-12 {
     top: 400px;
     left: 353px;
-	background-color:rgb(249 5 115);
+    background-color: rgb(249 5 115);
 }
+
 #v-13 {
     top: 442px;
     left: 405px;
-	background-color:rgb(5 213 188);
+    background-color: rgb(5 213 188);
 }
+
 #v-14 {
     top: 489px;
     left: 502px;
-	background-color:rgb(5 213 188);
+    background-color: rgb(5 213 188);
 }
+
 #v-15 {
     top: 461px;
     left: 338px;
-	background-color:rgb(18 120 8);
+    background-color: rgb(18 120 8);
 }
+
 #v-16 {
     top: 440px;
     left: 252px;
-	background-color:rgb(18 120 8);
+    background-color: rgb(18 120 8);
 }
+
 #v-17 {
     top: 387px;
     left: 230px;
-	background-color:rgb(18 120 8);
+    background-color: rgb(18 120 8);
 }
+
 #v-18 {
     top: 363px;
     left: 191px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-19 {
     top: 336px;
     left: 109px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-20 {
     top: 386px;
     left: 289px;
-	background-color:rgb(18 120 8);
+    background-color: rgb(18 120 8);
 }
+
 #v-21 {
     top: 342px;
     left: 388px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-22 {
     top: 325px;
     left: 269px;
-	background-color:rgb(255, 184, 0);
+    background-color: rgb(255, 184, 0);
 }
+
 #v-23 {
     top: 372px;
     left: 500.2px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
+
 #v-24 {
     top: 440px;
     left: 591px;
-	background-color:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
 }
 
 
@@ -158,89 +195,243 @@
 
 .edges svg {
     position: absolute;
+
 }
 
-#e-1-2{
-    top: 75px; 
-    left: 207px; 
+.edges svg path {
+    fill: none;
+    stroke: #5536DF;
+    stroke-opacity: 0;
+    stroke-width: 4;
+    transition: stroke-opacity 0.5s ease-in-out, stroke 0.5s ease-in-out;
 }
 
-#e-2-22{
-    top: 195px; 
-    left: 275px; 
+.edges svg path.contour {
+    stroke: #000000 !important;
+    stroke-width: 10 !important;
+    stroke-opacity: 1 !important;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    position: absolute;
+    z-index: 1;
 }
 
-#e-2-3{
+.edges svg path.highlighted {
+    stroke: #5536DF !important;
+    stroke-opacity: 1 !important;
+    stroke-width: 8 !important;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    position: absolute;
+    z-index: 2;
+}
+
+#e-1-2 {
+    top: 75px;
+    left: 205px;
+}
+
+#e-2-22 {
+    top: 195px;
+    left: 275px;
+}
+
+#e-2-3 {
     top: 198px;
-    left: 380px; 
+    left: 379px;
 }
 
-#e-3-4{
-    top: 170px;
-    left: 455px; 
+#e-3-4 {
+    top: 169px;
+    left: 456px;
 }
 
-#e-3-5{
+#e-3-5 {
     top: 287px;
-    left: 455px; 
+    left: 456px;
 }
 
-#e-3-21{
+#e-3-21 {
     top: 290px;
-    left: 394px; 
+    left: 394px;
 }
 
-#e-3-23{
+#e-3-23 {
     top: 293px;
-    left: 448px; 
+    left: 448px;
 }
 
-#e-21-23{
+#e-21-23 {
     top: 343px;
-    left: 400px; 
+    left: 400px;
 }
 
-#e-23-24{
+#e-23-24 {
     top: 377px;
-    left: 508px; 
+    left: 508px;
 }
 
-#e-5-24{
+#e-5-24 {
     top: 423px;
-    left: 600px; 
+    left: 603px;
 }
 
-#e-5-6{
+#e-5-6 {
     top: 430px;
-    left: 612px; 
+    left: 612px;
 }
 
-#e-6-7{
+#e-6-7 {
     top: 490px;
-    left: 573px; 
+    left: 573px;
 }
 
-#e-7-8{
+#e-7-8 {
     top: 452px;
-    left: 545px; 
+    left: 545px;
 }
 
-#e-8-9{
+#e-8-9 {
     top: 420px;
-    left: 512px; 
+    left: 512px;
 }
 
-#e-9-10{
+#e-9-10 {
     top: 401px;
-    left: 465px; 
+    left: 465px;
 }
 
-#e-10-11{
-    top: 396px;
-    left: 418px; 
-}
-
-#e-11-12{
+#e-10-11 {
     top: 394px;
-    left: 365px; 
+    left: 418px;
+}
+
+#e-11-12 {
+    top: 394px;
+    left: 365px;
+}
+
+#e-23-10 {
+    top: 376px;
+    left: 462px;
+}
+
+#e-23-9 {
+    top: 383px;
+    left: 499px;
+}
+
+#e-24-8 {
+    top: 439px;
+    left: 550px;
+}
+
+#e-24-7 {
+    top: 450px;
+    left: 575px;
+}
+
+#e-21-11 {
+    top: 352px;
+    left: 390px;
+}
+
+#e-21-12 {
+    top: 350px;
+    left: 357px;
+}
+
+#e-21-20 {
+    top: 342px;
+    left: 298px;
+}
+
+#e-12-20 {
+    top: 385px;
+    left: 298px;
+}
+
+#e-22-20 {
+    top: 335px;
+    left: 273px;
+}
+
+#e-22-16 {
+    top: 337px;
+    left: 253px;
+}
+
+#e-22-17 {
+    top: 333px;
+    left: 234px;
+}
+
+#e-17-18 {
+    top: 363px;
+    left: 201px;
+}
+
+#e-18-19 {
+    top: 336px;
+    left: 120px;
+}
+
+#e-16-17 {
+    top: 396px;
+    left: 233px;
+}
+
+#e-16-15 {
+    top: 441px;
+    left: 262px;
+}
+
+#e-15-12 {
+    top: 411px;
+    left: 338px;
+}
+
+#e-15-13 {
+    top: 444px;
+    left: 349px;
+}
+
+#e-13-12 {
+    top: 405px;
+    left: 360px;
+}
+
+#e-13-11 {
+    top: 409px;
+    left: 402px;
+}
+
+#e-13-14 {
+    top: 443px;
+    left: 416px;
+}
+
+#e-13-10 {
+    top: 405px;
+    left: 413px;
+}
+
+#e-14-10 {
+    top: 410px;
+    left: 460px;
+}
+
+#e-14-9 {
+    top: 426px;
+    left: 500px;
+}
+
+#e-14-8 {
+    top: 450px;
+    left: 508px;
+}
+
+#e-14-7 {
+    top: 482px;
+    left: 513px;
 }

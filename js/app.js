@@ -1,9 +1,10 @@
 let clickCount = 0;
 let sourceNode, targetNode;
 
+
 $('.circle').each(function () {
 
-    $(this).on('click', function () { 
+    $(this).on('click', function () {
 
         var vertId = $(this).attr('id').split('-')[1];
         var vert = $(this).attr('id');
@@ -23,9 +24,9 @@ $('.circle').each(function () {
             if (!targetNode) {
                 targetNode = vertId;
                 cyNode.select();
-                
+
                 findShortestPath(sourceNode, targetNode);
-    
+
                 cy.elements().unselect();
                 sourceNode = null;
                 targetNode = null;
@@ -34,7 +35,7 @@ $('.circle').each(function () {
     });
 });
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     console.log('X:', e.clientX, 'Y:', e.clientY);
 });
 
@@ -93,33 +94,6 @@ let cy = cytoscape({
         { data: { source: '17', target: '16', weight: 1 } }
         // ...
     ],
-    style: [
-        {
-            selector: 'node',
-            style: {
-                'background-color': '#666',
-                'label': 'data(id)'
-            }
-        },
-        {
-            selector: 'edge',
-            style: {
-                'width': 3,
-                'line-color': '#ccc',
-                'target-arrow-color': '#ccc',
-                'target-arrow-shape': 'triangle',
-                'label': 'data(weight)'
-            }
-        },
-        {
-            selector: '.highlighted',
-            style: {
-                'line-color': 'red',
-                'width': 5,
-                'z-index': 9999
-            }
-        }
-    ],
     layout: {
         name: 'circle',
     }
@@ -127,11 +101,13 @@ let cy = cytoscape({
 
 
 function findShortestPath(sourceId, targetId) {
-    cy.elements('.highlighted').removeClass('highlighted');
+
+    resetPathStyles();
+
     console.log(`Finding path from ${sourceId} to ${targetId}`);
     var dijkstra = cy.elements().dijkstra({
         root: `#${sourceId}`,
-        weight: function(edge) {
+        weight: function (edge) {
             return edge.data('weight');
         },
         directed: false
@@ -139,10 +115,50 @@ function findShortestPath(sourceId, targetId) {
 
     var path = dijkstra.pathTo(cy.getElementById(targetId));
     console.log(`Path: ${path.map(node => node.data('id')).join(' -> ')}`);
-    
-    path.addClass('highlighted');
-    console.log(`Number of highlighted elements: ${cy.elements('.highlighted').length}`);
+
+
+
+    highlightPath(path);
     return path;
+}
+
+function resetPathStyles() {
+    $('.edges svg path').removeClass('highlighted');
+}
+
+function highlightPath(path) {
+
+    document.querySelectorAll('.edges svg path').forEach(function (pathElement) {
+        pathElement.style.strokeOpacity = "0";
+        pathElement.removeAttribute('style');
+        pathElement.classList.remove('contour', 'highlighted');
+    });
+
+    path.edges().forEach(edge => {
+        var source = edge.data('source');
+        var target = edge.data('target');
+
+        var edgeId = `e-${source}-${target}`;
+        var reverseEdgeId = `e-${target}-${source}`;
+
+        var svgEdge = document.getElementById(edgeId) || document.getElementById(reverseEdgeId);
+        console.log('id svg', svgEdge)
+        var svgElement = document.querySelector(`#${edgeId}`) || document.querySelector(`#${reverseEdgeId}`);
+
+        if (svgElement) {
+            var contourPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            contourPath.setAttribute('d', svgElement.querySelector('path').getAttribute('d'));
+            contourPath.setAttribute('class', 'contour');
+            svgElement.prepend(contourPath);
+
+            var highlightedPath = svgElement.querySelector('path:not(.contour)');
+            setTimeout(() => {
+                highlightedPath.classList.add('highlighted');
+                highlightedPath.style.strokeOpacity = "1";
+            }, 10);
+        }
+
+    });
 }
 
 
