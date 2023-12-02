@@ -29,7 +29,7 @@ function exibirQuadrado(num, desc) {
 		case 16:
 		case 17:
 		case 20:
-			$('#quadrado').css('background-color', 'rgb(18 120 8)');
+			$('#quadrado').css('background-color', 'rgb(101, 223, 90)');
 			break;
 		case 11:
 			$('#quadrado').css('background-color', 'rgb(139 4 255)');

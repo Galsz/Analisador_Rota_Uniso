@@ -1,7 +1,27 @@
 .body{
     font-weight: bold;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background: linear-gradient(#ffffff, #ebe9e9);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    justify-items: center;
 }
+
+#conteudo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-450px);
+}
+
+@media(max-height: 768px){
+    #conteudo {
+        top: 110px;
+    }
+}
+
 
 /* GRAFO */
 
@@ -11,6 +31,8 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* NOMES */
 
 @keyframes animacaoQuadrado {
     0% {
@@ -91,7 +113,6 @@
 .circle:active {
     transform: translate(-50%, -50%) scale(1);
 }
-
 
 #v-1 {
     top: 70px;
@@ -180,19 +201,19 @@
 #v-15 {
     top: 461px;
     left: 338px;
-    background-color: rgb(18 120 8);
+    background-color: rgb(101, 223, 90);
 }
 
 #v-16 {
     top: 440px;
     left: 252px;
-    background-color: rgb(18 120 8);
+    background-color: rgb(101, 223, 90);
 }
 
 #v-17 {
     top: 387px;
     left: 230px;
-    background-color: rgb(18 120 8);
+    background-color: rgb(101, 223, 90);
 }
 
 #v-18 {
@@ -210,7 +231,7 @@
 #v-20 {
     top: 386px;
     left: 289px;
-    background-color: rgb(18 120 8);
+    background-color: rgb(101, 223, 90);
 }
 
 #v-21 {
@@ -247,7 +268,7 @@
 
 .edges svg path {
     fill: none;
-    stroke: #5536DF;
+    stroke: #0f6ebd;
     stroke-opacity: 0;
     stroke-width: 4;
     transition: stroke-opacity 0.5s ease-in-out, stroke 0.5s ease-in-out;
@@ -264,7 +285,7 @@
 }
 
 .edges svg path.highlighted {
-    stroke: #5536DF !important;
+    stroke: #0060b1 !important;
     stroke-opacity: 1 !important;
     stroke-width: 8 !important;
     stroke-linecap: round;
@@ -482,3 +503,29 @@
     top: 482px;
     left: 513px;
 }
+
+#menu-logo {
+    background: linear-gradient(#0060b1, #004a8e);
+    /* background-color: #0060b1; */
+    padding: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background: linear-gradient(#0060b1, #004a8e);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+#titulo {
+    margin-top: 2px;
+    font-weight: bold;
+    color: #053c69;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: rgba(145, 174, 202, 0.534) 0.1em 0.1em 0.2em;
+}   
